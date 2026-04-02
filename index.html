@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambica Pearls & Jewellers - Real Hyderabadi Pearl Jewellery</title>
+    <meta name="description" content="Authentic pearls, handcrafted designs, assured exchange from our Hyderabad showrooms. Since 2004.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ab2d32;
+            --primary-dark: #8a2529;
+            --navy: #2c2b4e;
+            --secondary: #058c4b;
+            --pearl: #f7f7f8;
+            --gold: #d4af37;
+            --text-dark: #111114;
+            --text-muted: #6E6E73;
+            --white: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: var(--pearl); 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.1; }
+        h1 { font-size: clamp(48px, 7vw, 112px); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(32px, 4vw, 56px); }
+        h3 { font-size: clamp(20px, 2vw, 28px); }
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 12px; font-size: 14px; font-weight: 500; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+        .btn-outline:hover { background: var(--navy); color: var(--white); }
+        .btn-light { background: var(--white); color: var(--primary); }
+        .btn-sm { padding: 10px 16px; font-size: 13px; }
+        .section-label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--primary); margin-bottom: 12px; font-weight: 500; }
+        .section-label.light { color: var(--gold); }
+        .link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 500; transition: all 0.3s ease; }
+        .link-arrow:hover { gap: 12px; }
+        .link-underline { display: inline-flex; align-items: center; gap: 8px; color: var(--white); border-bottom: 1px solid var(--gold); padding-bottom: 4px; transition: all 0.3s ease; }
+        .link-underline:hover { color: var(--gold); }
+        
+        /* Header */
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: all 0.3s ease; }
+        .header.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo { display: flex; align-items: baseline; gap: 8px; }
+        .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--navy); }
+        .logo-sub { font-family: 'Great Vibes', cursive; font-size: 20px; color: var(--gold); }
+        .nav-desktop { display: none; align-items: center; gap: 32px; }
+        .nav-link { font-size: 14px; font-weight: 500; color: var(--text-dark); transition: all 0.3s ease; display: flex; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; }
+        .nav-link:hover { color: var(--primary); }
+        .nav-dropdown { position: relative; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; margin-top: 8px; background: var(--white); border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); padding: 8px 0; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; }
+        .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: 14px; color: var(--text-dark); transition: all 0.3s ease; }
+        .dropdown-menu a:hover { background: var(--pearl); color: var(--primary); }
+        .header-actions { display: none; align-items: center; gap: 12px; }
+        .menu-toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: none; cursor: pointer; color: var(--navy); }
+        
+        /* Mobile Menu */
+        .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 1100; transform: translateX(100%); transition: transform 0.3s ease; overflow-y: auto; }
+        .mobile-menu.active { transform: translateX(0); }
+        .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .menu-close { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; }
+        .mobile-menu-content { padding: 24px; }
+        .mobile-section { margin-bottom: 24px; }
+        .mobile-section h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 12px; }
+        .mobile-section a { display: block; padding: 12px 0; font-size: 16px; color: var(--text-dark); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .mobile-section a:hover { color: var(--primary); }
+        .mobile-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+        .mobile-actions .btn { justify-content: center; }
+        
+        /* Hero Section */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--pearl); padding: 100px 24px 80px; overflow: hidden; }
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .hero-badge { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); text-align: center; z-index: 10; }
+        .hero-badge span { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); }
+        .hero-line { width: 80px; height: 1px; background: var(--gold); margin: 8px auto 0; opacity: 0.35; }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 32px;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            z-index: 5;
+            padding: 0 20px;
+        }
+        .hero-headline-left, .hero-headline-right { z-index: 10; }
+        .hero-headline-left {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-headline-right {
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .hero-headline-left h1, .hero-headline-right h1 { color: var(--text-dark); line-height: 0.9; }
+        .hero-portrait {
+            width: 280px;
+            max-width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            flex-shrink: 0;
+        }
+        .hero-portrait img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-headline-right p { max-width: 320px; margin: 16px auto 0; color: var(--text-muted); font-size: 16px; }
+        .hero-buttons { display: flex; gap: 12px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+        .hero-micro { position: absolute; bottom: 40px; left: 24px; right: 24px; display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .carousel-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .carousel-btn-prev {
+            left: 16px;
+        }
+        .carousel-btn-next {
+            right: 16px;
+        }
+        @media (min-width: 768px) {
+            .carousel-btn-prev { left: 40px; }
+            .carousel-btn-next { right: 40px; }
+        }
+        .carousel-indicators {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 20;
+        }
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(0,0,0,0.3);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-indicator.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        /* Statement Section - Horizontal Scrolling Version */
+        .panel .statement-image {
+            position: absolute;
+            inset: 0;
+        }
+        .panel .statement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .panel .statement-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+            pointer-events: none;
+        }
+        .panel .statement-content {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+            color: var(--white);
+        }
+        .panel .statement-content h2 {
+            max-width: 800px;
+            margin-bottom: 24px;
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1.1;
+        }
+        .panel .statement-content .link-underline {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 60px;
+        }
+        .panel .statement-content .link-underline:hover {
+            transform: translateX(4px);
+        }
+        
+        /* Regular Statement Sections - Fixed */
+        .statement-section { position: relative; height: 80vh; min-height: 500px; overflow: hidden; }
+        .statement-section .statement-image { position: absolute; inset: 0; }
+        .statement-section .statement-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .statement-section .statement-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; }
+        .statement-section .statement-content { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--white); }
+        .statement-section .statement-content h2 { max-width: 800px; margin-bottom: 24px; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; }
+        .statement-section .statement-content .link-underline { color: white; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; }
+        .statement-section .statement-content .link-underline:hover { transform: translateX(4px); }
+        
+        /* Collections Panel - Horizontal Scrolling Version */
+        .panel .collections-image {
+            position: absolute;
+            inset: 0;
+        }
+        .panel .collections-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .panel .collections-content {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 48px 24px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .panel .collections-content .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .panel .collections-content h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+        .panel .collections-content p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .panel .collections-content .link-arrow {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+        .panel .collections-content .link-arrow:hover {
+            transform: translateX(4px);
+        }
+        
+        /* Full-screen panel stack (GSAP wheel animation area) */
+        body { 
+            overflow-x: hidden; 
+            margin: 0;
+            padding: 0;
+        }
+        .full-screen { 
+            display: block; 
+            width: 100%; 
+            height: 100vh; 
+            overflow: hidden; 
+        }
+        #panels {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #panels #panels-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #panels #panels-container .panel {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        /* Use existing image/content structure as slide background */
+        .panel .statement-image,
+        .panel .collections-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .panel .statement-image img,
+        .panel .collections-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .panel .statement-content,
+        .panel .collections-content {
+            position: relative;
+            z-index: 2;
+            padding: 48px 32px;
+            box-sizing: border-box;
+        }
+        .panel .statement-content h2,
+        .panel .collections-content h2 {
+            font-size: clamp(32px, 4vw, 56px);
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        .panel .panel-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            font-family: 'Cormorant Garamond', serif;
+            text-transform: uppercase;
+        }
+        .panel .panel-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 5vw, 5rem);
+            font-weight: 400;
+            letter-spacing: 0.5em;
+            margin-right: -0.5em;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            color: var(--white);
+            width: 90vw;
+            max-width: 1200px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .panel .panel-heading-line {
+            color: var(--white);
+        }
+        .panel .panel-heading-name {
+            display: block;
+            margin-top: 0.2em;
+            color: #05007e;
+            letter-spacing: 0.5em;
+            margin-right: -0.5em;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .panel .panel-copy .link-underline {
+            color: hsl(0, 0%, 85%);
+            border-bottom-color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .panel .collections-content p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            max-width: 520px;
+            line-height: 1.6;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #panels-container .panel .panels-navigation {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+        #panels #panels-container .panel .anchor-panel,
+        #panels #panels-container .panel .nav-panel {
+            margin-right: 2rem;
+        }
+        #panels #panels-container .panels-navigation {
+            position: absolute;
+            width: 100%;
+            bottom: 3rem;
+            right: 3rem;
+            z-index: 10;
+        }
+        .panel .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .panel .row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            gap: 60px;
+        }
+        .panel .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .panel .col-6.d-flex {
+            display: flex;
+            flex-direction: column;
+            padding-left: 80px;
+        }
+        .panel .col-6 img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .panel .col-6 img:hover {
+            transform: scale(1.05);
+        }
+        .panel__number {
+            font-size: 120px;
+            font-weight: 100;
+            color: var(--primary);
+            margin-bottom: 30px;
+            line-height: 1;
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: -40px;
+        }
+        .panel h3 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            line-height: 1.1;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        .panel p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 450px;
+            font-weight: 400;
+        }
+        .panel .link-underline,
+        .panel .link-arrow {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 60px;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+        }
+        .panel .link-underline:hover,
+        .panel .link-arrow:hover {
+            color: var(--primary-dark);
+            transform: translateX(8px);
+        }
+        .panel .link-underline::after,
+        .panel .link-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .panel .link-underline:hover::after,
+        .panel .link-arrow:hover::after {
+            width: 100%;
+        }
+        .nav-panel a {
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .nav-panel a:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+        .panels-navigation.text-right {
+            justify-content: flex-end;
+        }
+        .panels-navigation .nav-panel {
+            margin: 0 12px;
+        }
+        .green { 
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 50%, #d4edd4 100%);
+            position: relative;
+        }
+        .green::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="30" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+        .purple { 
+            background: linear-gradient(135deg, #f8f5ff 0%, #e8e5ff 50%, #d4d5ff 100%);
+            position: relative;
+        }
+        .purple::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain2" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="30" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain2)"/></svg>');
+            pointer-events: none;
+        }
+        .orange { 
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe6d6 50%, #ffd4b4 100%);
+            position: relative;
+        }
+        .orange::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain3" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="30" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain3)"/></svg>');
+            pointer-events: none;
+        }
+        
+        /* Add floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .panel .col-6 img {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Enhanced typography */
+        .panel h3::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        
+        /* Collections Panel */
+        .collections-panel { display: flex; flex-direction: column; min-height: 80vh; }
+        .collections-image { height: 50vh; min-height: 300px; }
+        .collections-image img { width: 100%; height: 100%; object-fit: cover; }
+        .collections-content { display: flex; flex-direction: column; justify-content: center; padding: 48px 24px; background: var(--pearl); }
+        .collections-content h2 { margin-bottom: 16px; }
+        .collections-content p { color: var(--text-muted); margin-bottom: 24px; max-width: 480px; }
+        
+        /* Guide Panel */
+        .guide-panel { display: flex; flex-direction: column-reverse; min-height: 80vh; }
+        .guide-content { display: flex; flex-direction: column; justify-content: center; padding: 48px 24px; background: var(--pearl); }
+        .guide-content h2 { margin-bottom: 24px; }
+        .guide-list { list-style: none; margin-bottom: 24px; }
+        .guide-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+        .guide-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
+        .guide-list strong { color: var(--text-dark); }
+        .guide-list div { color: var(--text-muted); }
+        .guide-image { height: 50vh; min-height: 300px; }
+        .guide-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Bestsellers Section */
+        .bestsellers { padding: 80px 0; }
+        .section-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+        .section-header.center { text-align: center; align-items: center; }
+        .section-header h2 { margin-top: 8px; }
+        .section-header p { color: var(--text-muted); max-width: 500px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        
+        /* Product Card */
+        .product-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+        .product-image { position: relative; aspect-ratio: 4/5; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .product-card:hover .product-image img { transform: scale(1.05); }
+        .product-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0; transition: all 0.3s ease; }
+        .product-card:hover .product-overlay { opacity: 1; }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-size: 18px; margin-bottom: 12px; color: var(--text-dark); }
+        .product-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+        .spec-chip { display: inline-flex; padding: 4px 10px; background: rgba(171,45,50,0.08); color: var(--primary); font-size: 11px; font-weight: 500; border-radius: 20px; }
+        .btn-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--primary); color: var(--white); transition: all 0.3s ease; }
+        .btn-icon:hover { background: var(--primary-dark); transform: scale(1.05); }
+        .btn-icon.btn-white { background: var(--white); color: var(--navy); }
+        .btn-icon.btn-white:hover { background: var(--pearl); }
+        
+        /* Story Section */
+        .story-section { padding: 80px 0; }
+        .story-grid { display: grid; gap: 48px; }
+        .story-content h2 { margin: 12px 0 24px; }
+        .story-content > p { color: var(--text-muted); margin-bottom: 32px; }
+        .timeline { display: flex; flex-direction: column; gap: 20px; }
+        .timeline-item { display: flex; gap: 16px; }
+        .timeline-year { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--gold); min-width: 60px; }
+        .timeline-item div { display: flex; flex-direction: column; }
+        .timeline-item strong { color: var(--text-dark); font-weight: 500; }
+        .timeline-item span { font-size: 13px; color: var(--text-muted); }
+        .story-image { position: relative; border-radius: 16px; overflow: hidden; }
+        .story-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+        .story-quote { position: absolute; bottom: -20px; left: -20px; background: var(--white); padding: 24px; border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); max-width: 280px; }
+        .story-quote p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--text-dark); }
+        
+        /* Care Section */
+        .care-section { padding: 80px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+        .service-card { background: var(--white); border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .service-icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 20px; }
+        .service-icon.red { background: rgba(171,45,50,0.1); color: var(--primary); }
+        .service-icon.green { background: rgba(5,140,75,0.1); color: var(--secondary); }
+        .service-icon.gold { background: rgba(212,175,55,0.1); color: var(--gold); }
+        .service-card h3 { margin-bottom: 12px; font-size: 20px; }
+        .service-card p { color: var(--text-muted); font-size: 14px; }
+        .care-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        
+        /* Contact CTA */
+        .contact-cta { background: var(--navy); padding: 80px 0; }
+        .contact-grid { display: grid; gap: 48px; }
+        .contact-content { color: var(--white); }
+        .contact-content h2 { margin: 12px 0 24px; color: var(--white); }
+        .contact-content > p { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+        .store-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+        .store-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gold); }
+        .store-item svg { flex-shrink: 0; margin-top: 2px; }
+        .store-item div { display: flex; flex-direction: column; }
+        .store-item strong { color: var(--white); font-weight: 500; }
+        .store-item span { font-size: 13px; color: rgba(255,255,255,0.6); }
+        .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .contact-image { border-radius: 16px; overflow: hidden; }
+        .contact-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+        .btn-outline-light { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3); padding: 12px 24px; border-radius: 12px; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-outline-light:hover { background: rgba(255,255,255,0.1); }
+        
+        /* Footer */
+        .footer { background: var(--navy); color: var(--white); padding: 64px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-brand .logo-main { color: var(--white); }
+        .footer-brand > p { color: rgba(255,255,255,0.7); margin: 16px 0 24px; font-size: 14px; max-width: 300px; }
+        .trust-badges { display: flex; flex-direction: column; gap: 8px; }
+        .badge { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.6); }
+        .badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); }
+        .footer-links h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 16px; }
+        .footer-links a { display: block; padding: 8px 0; font-size: 14px; color: rgba(255,255,255,0.7); transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--gold); }
+        .mt-4 { margin-top: 24px; }
+        .footer-contact h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 16px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; color: var(--gold); }
+        .contact-item svg { flex-shrink: 0; margin-top: 2px; }
+        .contact-item div, .contact-item a { display: flex; flex-direction: column; font-size: 14px; color: rgba(255,255,255,0.7); }
+        .contact-item strong { color: var(--white); font-weight: 500; }
+        .contact-item a:hover { color: var(--gold); }
+        .social-links { display: flex; gap: 12px; margin-top: 24px; }
+        .social-links a { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); transition: all 0.3s ease; }
+        .social-links a:hover { background: var(--gold); color: var(--navy); }
+        .footer-bottom { display: flex; flex-direction: column; gap: 16px; padding: 24px 0; font-size: 13px; color: rgba(255,255,255,0.5); }
+        .footer-legal { display: flex; gap: 24px; }
+        .footer-legal a:hover { color: var(--white); }
+        
+        /* Mobile Bottom Bar */
+        .mobile-bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); border-top: 1px solid rgba(0,0,0,0.08); display: flex; justify-content: space-around; padding: 12px; z-index: 1000; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); }
+        .mobile-action { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 4px 16px; }
+        .mobile-action span { font-size: 10px; font-weight: 500; color: var(--text-dark); }
+        .mobile-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .mobile-icon.primary { background: var(--primary); color: var(--white); }
+        .mobile-icon.outline { border: 2px solid var(--navy); color: var(--navy); }
+        .mobile-icon.secondary { background: var(--secondary); color: var(--white); }
+        body::after { content: ''; display: block; height: 80px; }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .container { padding: 0 48px; }
+            .hero-content { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; }
+            .hero-headline-right { text-align: right; }
+            .hero-headline-right p { margin-left: auto; margin-right: 0; }
+            .hero-buttons { justify-content: flex-end; }
+            .hero-portrait { width: 340px; }
+            .collections-panel, .guide-panel { flex-direction: row; }
+            .collections-image, .guide-image { width: 62%; height: auto; }
+            .collections-content, .guide-content { width: 38%; padding: 64px 48px; }
+            .guide-panel { flex-direction: row-reverse; }
+            .section-header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+            .story-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+            .contact-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+        }
+        @media (min-width: 1024px) {
+            .nav-desktop, .header-actions { display: flex; }
+            .menu-toggle { display: none; }
+            .mobile-bottom-bar { display: none; }
+            body::after { display: none; }
+            .hero-portrait { width: 400px; }
+        }
+        /* Scroll reveal animation (used by main.js) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="home-page">
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="images/LOGO.png" alt="Ambica Pearls & Jewellers" style="height: 48px; width: auto;">
+                </a>
+                
+                <nav class="nav-desktop">
+                    <div class="nav-dropdown">
+                        <button class="nav-link">Collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                        <div class="dropdown-menu">
+                            <a href="category-pearl.html">Pearl Collection</a>
+                            <a href="category-ruby.html">Ruby Collection</a>
+                            <a href="category-emerald.html">Emerald Collection</a>
+                            <a href="category-rose-quartz.html">Rose Quartz Collection</a>
+                            <a href="category-blue-sapphire.html">Blue Sapphire Collection</a>
+                            <a href="category-gomedagam.html">Gomedagam Collection</a>
+                            <a href="category-coral.html">Coral Collection</a>
+                            <a href="category-zircon.html">Zircon Collection</a>
+                            <a href="category-yellow-sapphire.html">Yellow Sapphire Collection</a>
+                            <a href="category-opal.html">Opal Collection</a>
+                            <a href="category-turquoise.html">Turquoise Collection</a>
+                            <a href="category-amethyst.html">Amethyst Collection</a>
+                        </div>
+                    </div>
+                    <a href="pearl-guide.html" class="nav-link">Pearl Guide</a>
+                    <a href="about.html" class="nav-link">Our Story</a>
+                    <a href="stores.html" class="nav-link">Stores</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="tel:+919876543210" class="btn btn-outline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call
+                    </a>
+                    <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20schedule%20a%20video%20call%20to%20see%20your%20pearl%20collections." target="_blank" class="btn btn-outline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        Video Call
+                    </a>
+                    <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections.%20Please%20share%20more%20details." target="_blank" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo"><img src="images/LOGO.png" alt="Ambica Pearls & Jewellers" style="height:36px; width:auto;"></a>
+            <button class="menu-close" id="menuClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-section">
+                <h4>Collections</h4>
+                <a href="category-pearl.html">Pearl Collection</a>
+                <a href="category-ruby.html">Ruby Collection</a>
+                <a href="category-emerald.html">Emerald Collection</a>
+                <a href="category-rose-quartz.html">Rose Quartz Collection</a>
+                <a href="category-blue-sapphire.html">Blue Sapphire Collection</a>
+                <a href="category-gomedagam.html">Gomedagam Collection</a>
+                <a href="category-coral.html">Coral Collection</a>
+                <a href="category-zircon.html">Zircon Collection</a>
+                <a href="category-yellow-sapphire.html">Yellow Sapphire Collection</a>
+                <a href="category-opal.html">Opal Collection</a>
+                <a href="category-turquoise.html">Turquoise Collection</a>
+                <a href="category-amethyst.html">Amethyst Collection</a>
+            </div>
+            <div class="mobile-section">
+                <a href="pearl-guide.html">Pearl Guide</a>
+                <a href="about.html">Our Story</a>
+                <a href="stores.html">Stores</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="mobile-actions">
+                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections." target="_blank" class="btn btn-primary">WhatsApp Us</a>
+                <a href="tel:+919876543210" class="btn btn-outline">Call Us</a>
+                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20schedule%20a%20video%20call%20to%20see%20your%20pearl%20collections." target="_blank" class="btn btn-outline">Video Call</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="hero-badge">
+                        <span>Hyderabad</span>
+                        <div class="hero-line"></div>
+                    </div>
+                    
+                    <div class="hero-content">
+                        <div class="hero-headline-left">
+                            <h1>Real</h1>
+                        </div>
+                        
+                        <div class="hero-portrait">
+                            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&h=800&fit=crop" alt="Pearl jewellery model">
+                        </div>
+                        
+                        <div class="hero-headline-right">
+                            <h1>Pearls</h1>
+                            <p>Handcrafted jewellery from Hyderabad—designed to be exchanged, restyled, and treasured.</p>
+                            <div class="hero-buttons">
+                                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections.%20Please%20share%20more%20details." target="_blank" class="btn btn-primary">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                    WhatsApp
+                                </a>
+                                <a href="tel:+919876543210" class="btn btn-outline">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    Call
+                                </a>
+                                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20schedule%20a%20video%20call%20to%20see%20your%20pearl%20collections." target="_blank" class="btn btn-outline">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                    Video Call
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="hero-badge">
+                        <span>Authentic</span>
+                        <div class="hero-line"></div>
+                    </div>
+                    
+                    <div class="hero-content">
+                        <div class="hero-headline-left">
+                            <h1>Timeless</h1>
+                        </div>
+                        
+                        <div class="hero-portrait">
+                            <img src="https://southjewellery.com/wp-content/uploads/2022/04/diamond-jewellery-vega-sri.jpg" alt="Pearl necklace model">
+                        </div>
+                        
+                        <div class="hero-headline-right">
+                            <h1>Elegance</h1>
+                            <p>Traditional designs meet modern craftsmanship in every piece.</p>
+                            <div class="hero-buttons">
+                                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections.%20Please%20share%20more%20details." target="_blank" class="btn btn-primary">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                    WhatsApp
+                                </a>
+                                <a href="tel:+919876543210" class="btn btn-outline">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    Call
+                                </a>
+                                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20schedule%20a%20video%20call%20to%20see%20your%20pearl%20collections." target="_blank" class="btn btn-outline">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                    Video Call
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="hero-badge">
+                        <span>Exclusive</span>
+                        <div class="hero-line"></div>
+                    </div>
+                    
+                    <div class="hero-content">
+                        <div class="hero-headline-left">
+                            <h1>Limited</h1>
+                        </div>
+                        
+                        <div class="hero-portrait">
+                            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&h=800&fit=crop" alt="Pearl earrings model">
+                        </div>
+                        
+                        <div class="hero-headline-right">
+                            <h1>Collection</h1>
+                            <p>Discover our unique pearl designs available only at Ambica.</p>
+                            <div class="hero-buttons">
+                                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections.%20Please%20share%20more%20details." target="_blank" class="btn btn-primary">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                    WhatsApp
+                                </a>
+                                <a href="tel:+919876543210" class="btn btn-outline">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    Call
+                                </a>
+                                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20schedule%20a%20video%20call%20to%20see%20your%20pearl%20collections." target="_blank" class="btn btn-outline">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                    Video Call
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <button class="carousel-btn carousel-btn-prev" id="carouselPrev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" id="carouselNext">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6 6"/></svg>
+            </button>            
+        </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section id="panels">
+        <div id="panels-container">
+            <article id="panel-1" class="panel full-screen" data-pearl="Pearl Malas" data-href="category-malas.html" data-cta="Explore">
+                <div class="statement-image">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1920&h=1080&fit=crop" alt="Pearl jewellery model">
+                    <div class="statement-overlay"></div>
+                </div>
+                <div class="statement-content panel-copy">
+                    <h2 class="panel-heading"><span class="panel-heading-line">Discover</span> <span class="panel-heading-name">Pearl Malas</span></h2>
+                    <a href="category-malas.html" class="link-underline panel-cta">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+            </article>
+            
+            <article id="panel-2" class="panel full-screen" data-pearl="Pearl Earrings" data-href="category-earrings.html" data-cta="Explore">
+                <div class="statement-image">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&h=800&fit=crop" alt="Pearl necklace collection">
+                    <div class="statement-overlay"></div>
+                </div>
+                <div class="statement-content panel-copy">
+                    <h2 class="panel-heading"><span class="panel-heading-line">Discover</span> <span class="panel-heading-name">Pearl Earrings</span></h2>
+                    <a href="category-earrings.html" class="link-underline panel-cta">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+            </article>
+            
+            <article id="panel-3" class="panel full-screen" data-pearl="Pearl Bangles" data-href="category-bangles.html" data-cta="Explore">
+                <div class="statement-image">
+                    <img src="https://images.unsplash.com/photo-1617038224557-69d61629fd8e?w=1920&h=1080&fit=crop" alt="Handcrafting pearls">
+                    <div class="statement-overlay"></div>
+                </div>
+                <div class="statement-content panel-copy">
+                    <h2 class="panel-heading"><span class="panel-heading-line">Discover</span> <span class="panel-heading-name">Pearl Bangles</span></h2>
+                    <a href="category-bangles.html" class="link-underline panel-cta">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+            </article>
+            
+            <article id="panel-4" class="panel full-screen" data-pearl="Pearl Sets" data-href="category-sets.html" data-cta="Explore">
+                <div class="statement-image">
+                    <img src="https://images.unsplash.com/photo-1635767798638-3e2523c0188b?w=1920&h=1080&fit=crop" alt="Pearl earring detail">
+                    <div class="statement-overlay"></div>
+                </div>
+                <div class="statement-content panel-copy">
+                    <h2 class="panel-heading"><span class="panel-heading-line">Discover</span> <span class="panel-heading-name">Pearl Sets</span></h2>
+                    <a href="category-sets.html" class="link-underline panel-cta">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Atelier Section - Removed duplicate panels -->
+    <!-- Bestsellers Section -->
+    <section class="bestsellers">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-label">Bestsellers</span>
+                    <h2>Most Loved Pieces</h2>
+                </div>
+                <a href="category-malas.html" class="link-arrow">View all <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&h=500&fit=crop" alt="Single-Line Classic Pearl Mala">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20Single-Line%20Classic%20Pearl%20Mala.%20Please%20share%20details." target="_blank" class="btn-icon" title="Ask on WhatsApp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            </a>
+                            <a href="tel:+919876543210" class="btn-icon btn-white" title="Call">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Single-Line Classic Pearl Mala</h3>
+                        <div class="product-specs">
+                            <span class="spec-chip">7-8 mm</span>
+                            <span class="spec-chip">Single Line</span>
+                            <span class="spec-chip">925 Silver</span>
+                        </div>
+                        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20Single-Line%20Classic%20Pearl%20Mala.%20Please%20share%20details." target="_blank" class="btn btn-primary btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            Ask on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400&h=500&fit=crop" alt="Kundan Pearl Drop Earrings">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20Kundan%20Pearl%20Drop%20Earrings.%20Please%20share%20details." target="_blank" class="btn-icon" title="Ask on WhatsApp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            </a>
+                            <a href="tel:+919876543210" class="btn-icon btn-white" title="Call">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Kundan Pearl Drop Earrings</h3>
+                        <div class="product-specs">
+                            <span class="spec-chip">7-8 mm</span>
+                            <span class="spec-chip">Drop Style</span>
+                            <span class="spec-chip">Kundan Work</span>
+                        </div>
+                        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20Kundan%20Pearl%20Drop%20Earrings.%20Please%20share%20details." target="_blank" class="btn btn-primary btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            Ask on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400&h=500&fit=crop" alt="Classic Pearl Bangles">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20Classic%20Pearl%20Bangles.%20Please%20share%20details." target="_blank" class="btn-icon" title="Ask on WhatsApp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            </a>
+                            <a href="tel:+919876543210" class="btn-icon btn-white" title="Call">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Pearl Bangles</h3>
+                        <div class="product-specs">
+                            <span class="spec-chip">6-7 mm</span>
+                            <span class="spec-chip">Set of 4</span>
+                            <span class="spec-chip">Gold Plated</span>
+                        </div>
+                        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20Classic%20Pearl%20Bangles.%20Please%20share%20details." target="_blank" class="btn btn-primary btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            Ask on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="statement-section">
+        <div class="statement-image">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1920&h=1080&fit=crop" alt="Pearl detail">
+            <div class="statement-overlay"></div>
+        </div>
+        <div class="statement-content">
+            <h2>Details Matter</h2>
+            <a href="about.html" class="link-underline">Explore craftsmanship <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <span class="section-label">Our Story</span>
+                    <h2>Three Stores.<br>One Promise.</h2>
+                    <p>Started in 2004 in Hyderabad, Ambica began with a simple promise: real pearls, honest service, and designs you can exchange or restyle. Today, with three stores across the city, that promise remains unchanged.</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2004</span>
+                            <div>
+                                <strong>First showroom opens</strong>
+                                <span>Lower Tank Bund, Hyderabad</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2012</span>
+                            <div>
+                                <strong>Custom bridal sets launch</strong>
+                                <span>Introducing bespoke designs</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2025</span>
+                            <div>
+                                <strong>Three stores, same promise</strong>
+                                <span>Serving Hyderabad with love</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Ambica showroom">
+                    <div class="story-quote">
+                        <p>"We don't just sell pearls—we help you wear them, rework them, and pass them on."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="statement-section">
+        <div class="statement-image">
+            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=1920&h=1080&fit=crop" alt="Family moment with pearls">
+            <div class="statement-overlay"></div>
+        </div>
+        <div class="statement-content">
+            <h2>A Promise You Can Wear</h2>
+            <a href="contact.html" class="link-underline">Book a try-on <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+    </section>
+
+    <!-- Gifting Section -->
+    <section class="collections-panel">
+        <div class="collections-image">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&h=800&fit=crop" alt="Pearl gifting">
+        </div>
+        <div class="collections-content">
+            <span class="section-label">Gifting</span>
+            <h2>Gifting, Made Simple</h2>
+            <p>Weddings, birthdays, anniversaries—choose a piece today, exchange or restyle tomorrow. Our gift sets come beautifully packaged with an authenticity certificate.</p>
+            <a href="category-sets.html" class="link-arrow">Explore gift edits <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+    </section>
+
+    <!-- Earring Close-up -->
+    <section class="statement-section">
+        <div class="statement-image">
+            <img src="https://images.unsplash.com/photo-1635767798638-3e2523c0188b?w=1920&h=1080&fit=crop" alt="Pearl earring detail">
+            <div class="statement-overlay"></div>
+        </div>
+        <div class="statement-content">
+            <h2>Finish That Shines</h2>
+            <a href="category-earrings.html" class="link-underline">View earrings <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+    </section>
+
+    <!-- Care & Services -->
+    <section class="care-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Care & Services</span>
+                <h2>We're Here to Help</h2>
+                <p>Keep your pieces luminous with simple care, easy exchanges, and custom design support.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon red">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18m-6-6l6 6 6-6M6 9l6-6 6 6"/></svg>
+                    </div>
+                    <h3>Pearl Care</h3>
+                    <p>Store flat, avoid perfume, wipe after wear. Simple steps to keep your pearls luminous for years.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Exchange & Resize</h3>
+                    <p>100% exchangeable within policy. Resizing available on select pieces. Your satisfaction, guaranteed.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon gold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Custom Orders</h3>
+                    <p>Bridal sets, matching pieces, and personal design consultations. Let's create something unique.</p>
+                </div>
+            </div>
+            
+            <div class="care-actions">
+                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I%20have%20a%20question%20about%20pearl%20care." target="_blank" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    WhatsApp Us
+                </a>
+                <a href="stores.html" class="btn btn-outline">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Visit Our Stores
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <span class="section-label light">Visit or Enquire</span>
+                    <h2>We'd Love to See You</h2>
+                    <p>Visit any of our three Hyderabad stores to try on our collections in person. Our experts are ready to help you find the perfect piece.</p>
+                    
+                    <div class="store-list">
+                        <div class="store-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <strong>Lower Tank Bund</strong>
+                                <span>Main Store & Workshop</span>
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <strong>Banjara Hills (Road No. 10)</strong>
+                                <span>Premium Collection</span>
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <strong>Gachibowli</strong>
+                                <span>Newest Location</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-actions">
+                        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20visit%20one%20of%20your%20stores." target="_blank" class="btn btn-light">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            WhatsApp Us
+                        </a>
+                        <a href="mailto:hello@ambicapearls.com" class="btn btn-outline-light">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Email Us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Ambica store interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/LOGO.png" alt="Ambica Pearls & Jewellers" style="height:44px; width:auto;">
+                    </a>
+                    <p>Authentic Hyderabadi pearl jewellery since 2004. Handcrafted designs, assured exchange, three Hyderabad stores.</p>
+                    <div class="trust-badges">
+                        <div class="badge"><span></span> 100% Exchangeable</div>
+                        <div class="badge"><span></span> Authentic Pearls & Stones</div>
+                        <div class="badge"><span></span> Custom Designs</div>
+                        <div class="badge"><span></span> 3 Hyderabad Stores</div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <a href="category-malas.html">Pearl Malas</a>
+                    <a href="category-earrings.html">Pearl Earrings</a>
+                    <a href="category-bangles.html">Pearl Bangles</a>
+                    <a href="category-sets.html">Pearl Sets</a>
+                    <a href="category-mens.html">Men's Collection</a>
+                    <a href="category-western.html">Western Collection</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Information</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="pearl-guide.html">Pearl Guide</a>
+                    <a href="stores.html">Our Stores</a>
+                    <a href="contact.html">Contact</a>
+                    <h4 class="mt-4">Policies</h4>
+                    <a href="policy-authenticity.html">Authenticity & Exchange</a>
+                    <a href="policy-custom.html">Custom Orders</a>
+                    <a href="policy-privacy.html">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <strong>Lower Tank Bund</strong>
+                            <span>Hyderabad, Telangana 500080</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:hello@ambicapearls.com">hello@ambicapearls.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <span>Mon - Sat: 10:30 AM - 8:30 PM</span>
+                            <span>Sunday: 11:00 AM - 2:00 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ambica Pearls & Jewellers. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="policy-privacy.html">Privacy Policy</a>
+                    <a href="policy-authenticity.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections." target="_blank" class="mobile-action">
+            <div class="mobile-icon primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <span>WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="mobile-action">
+            <div class="mobile-icon outline">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span>Call</span>
+        </a>
+        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20schedule%20a%20video%20call%20to%20see%20your%20pearl%20collections." target="_blank" class="mobile-action">
+            <div class="mobile-icon outline">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <span>Video Call</span>
+        </a>
+        <a href="contact.html" class="mobile-action">
+            <div class="mobile-icon secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <span>Try-On</span>
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+            
+            const carouselContainer = document.querySelector('.carousel-container');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carouselPrev');
+            const nextBtn = document.getElementById('carouselNext');
+            
+            if (!carouselContainer || !slides || slides.length === 0) {
+                console.error('Carousel elements not found');
+                return;
+            }
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function showSlide(index) {
+                if (index < 0 || index >= totalSlides) return;
+                currentSlide = index;
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].classList.toggle('active', i === index);
+                }
+                for (var j = 0; j < indicators.length; j++) {
+                    indicators[j].classList.toggle('active', j === index);
+                }
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+            
+            // Initialize first slide
+            showSlide(0);
+            
+            // Auto-play: advance every 4 seconds, but stop when reaching the last slide
+            var autoStopped = false;
+            function autoAdvance() {
+                if (currentSlide < totalSlides - 1) {
+                    showSlide(currentSlide + 1);
+                } else {
+                    clearInterval(carouselAutoPlay);
+                    autoStopped = true;
+                }
+            }
+            var carouselAutoPlay = setInterval(autoAdvance, 4000);
+            var heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.addEventListener('mouseenter', function() {
+                    clearInterval(carouselAutoPlay);
+                });
+                heroSection.addEventListener('mouseleave', function() {
+                    if (!autoStopped) {
+                        carouselAutoPlay = setInterval(autoAdvance, 4000);
+                    }
+                });
+            }
+            
+            // Event listeners
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            
+            // Indicator clicks
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => showSlide(index));
+            });
+            
+            // GSAP vertical slide animation for #panels (similar to provided example)
+            gsap.registerPlugin(ScrollToPlugin);
+            const panelsSection = document.querySelector('#panels');
+            const panelsContainer = document.querySelector('#panels-container');
+            const panels = gsap.utils.toArray('#panels-container .panel');
+            let currentPanelIndex = 0;
+            let panelAnimating = false;
+
+            // Same text animation for every panel (match reference: 1s, power2, staggered reveal)
+            function playPanelTextAnimation(panel) {
+                const line = panel.querySelector('.panel-heading-line');
+                const name = panel.querySelector('.panel-heading-name');
+                const cta = panel.querySelector('.panel-cta');
+                if (!line && !name) return;
+                gsap.set([line, name, cta].filter(Boolean), { opacity: 0, y: 28 });
+                gsap.to(line, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' });
+                gsap.to(name, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.15 });
+                gsap.to(cta, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.35 });
+            }
+
+            function showPanel(index, direction) {
+                if (!panels.length) return;
+                const incoming = panels[index];
+                const outgoing = panels[currentPanelIndex];
+
+                if (incoming === outgoing) return;
+
+                panelAnimating = true;
+
+                gsap.set(incoming, {
+                    visibility: 'visible',
+                    opacity: 1,
+                    yPercent: direction === 'down' ? 100 : -100,
+                    zIndex: 2
+                });
+                gsap.set(outgoing, { zIndex: 1 });
+
+                const tl = gsap.timeline({
+                    defaults: { duration: 1.1, ease: 'power2.inOut' },
+                    onComplete: () => {
+                        gsap.set(outgoing, { visibility: 'hidden', opacity: 0, yPercent: 0 });
+                        currentPanelIndex = index;
+                        panelAnimating = false;
+                        playPanelTextAnimation(incoming);
+                    }
+                });
+
+                tl.to(incoming, { yPercent: 0 }, 0)
+                  .to(outgoing, { yPercent: direction === 'down' ? -100 : 100 }, 0);
+            }
+
+            function initPanelsSlides() {
+                if (!panelsSection || !panelsContainer || !panels.length) return;
+
+                // Initial state: first panel visible, others hidden
+                panels.forEach((panel, i) => {
+                    if (i === 0) {
+                        gsap.set(panel, { visibility: 'visible', opacity: 1, yPercent: 0, zIndex: 2 });
+                        playPanelTextAnimation(panel);
+                    } else {
+                        gsap.set(panel, { visibility: 'hidden', opacity: 0, yPercent: 100, zIndex: 1 });
+                    }
+                });
+
+                const nextSection = document.querySelector('.bestsellers');
+
+                function inPanelsViewport() {
+                    const rect = panelsSection.getBoundingClientRect();
+                    const vh = window.innerHeight || document.documentElement.clientHeight;
+                    // Consider "active" when panels section is mostly in view
+                    return rect.top < vh * 0.75 && rect.bottom > vh * 0.25;
+                }
+
+                function handleWheel(e) {
+                    if (!inPanelsViewport()) return;
+                    if (panelAnimating) {
+                        e.preventDefault();
+                        return;
+                    }
+
+                    const deltaY = e.deltaY || -e.wheelDelta || e.detail;
+                    if (!deltaY) return;
+
+                    const goingDown = deltaY > 0;
+
+                    // At first panel and scrolling up: let page scroll normally
+                    if (!goingDown && currentPanelIndex === 0) return;
+
+                    // At last panel and scrolling down: let page move to next section
+                    if (goingDown && currentPanelIndex === panels.length - 1) {
+                        if (nextSection) {
+                            e.preventDefault();
+                            gsap.to(window, {
+                                duration: 0.8,
+                                scrollTo: { y: nextSection, autoKill: true },
+                                ease: 'power2.out'
+                            });
+                        }
+                        return;
+                    }
+
+                    e.preventDefault();
+
+                    const nextIndex = currentPanelIndex + (goingDown ? 1 : -1);
+                    if (nextIndex < 0 || nextIndex >= panels.length) return;
+
+                    showPanel(nextIndex, goingDown ? 'down' : 'up');
+                }
+
+                // Use non-passive listener so we can preventDefault
+                window.addEventListener('wheel', handleWheel, { passive: false });
+            }
+
+            initPanelsSlides();
+            
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            if (menuClose && mobileMenu) {
+                menuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Parallax: statement-section background images move on scroll
+            (function() {
+                var sections = document.querySelectorAll('.statement-section');
+                var ticking = false;
+                function updateParallax() {
+                    var viewportMid = window.innerHeight * 0.5;
+                    sections.forEach(function(section) {
+                        var img = section.querySelector('.statement-image img');
+                        if (!img) return;
+                        var rect = section.getBoundingClientRect();
+                        var sectionMid = rect.top + rect.height * 0.5;
+                        var offset = (viewportMid - sectionMid) * 0.15;
+                        offset = Math.max(-40, Math.min(40, offset));
+                        img.style.transform = 'translateY(' + Math.round(offset) + 'px)';
+                    });
+                    ticking = false;
+                }
+                function onScroll() {
+                    if (!ticking) {
+                        requestAnimationFrame(updateParallax);
+                        ticking = true;
+                    }
+                }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', updateParallax);
+                updateParallax();
+            })();
+        });
+    </script>
+</body>
+</html>

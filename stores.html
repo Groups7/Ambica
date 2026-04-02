@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Stores - Ambica Pearls & Jewellers</title>
+    <meta name="description" content="Visit any of our three Hyderabad showrooms. Lower Tank Bund, Banjara Hills, and Gachibowli.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .stores-section {
+            background: var(--pearl);
+        }
+        .stores-grid {
+            display: grid;
+            gap: 24px;
+            padding: 48px 0 80px;
+        }
+        .store-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .store-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+        .store-image {
+            height: 220px;
+        }
+        .store-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .store-info {
+            padding: 24px 24px 20px;
+        }
+        .store-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .store-info h3 {
+            margin-bottom: 8px;
+        }
+        .store-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .store-chip {
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(44,43,78,0.04);
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .store-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .store-detail svg {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .store-actions {
+            margin-top: 20px;
+        }
+        .appointment-section {
+            background: white;
+            padding: 72px 0 80px;
+        }
+        .appointment-grid {
+            display: grid;
+            gap: 48px;
+            align-items: center;
+        }
+        .appointment-content h2 {
+            margin-bottom: 16px;
+        }
+        .appointment-content > p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(171, 45, 50, 0.08);
+            color: var(--primary);
+            font-weight: 600;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .appointment-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+        }
+        @media (min-width: 768px) {
+            .stores-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .appointment-grid {
+                grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="images/LOGO.png" alt="Ambica Pearls & Jewellers" style="height:48px; width:auto;">
+                </a>
+                
+                <nav class="nav-desktop">
+                    <div class="nav-dropdown">
+                        <button class="nav-link">Collections <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                        <div class="dropdown-menu">
+                            <a href="category-malas.html">Pearl Malas</a>
+                            <a href="category-earrings.html">Pearl Earrings</a>
+                            <a href="category-bangles.html">Pearl Bangles</a>
+                            <a href="category-sets.html">Pearl Sets</a>
+                            <a href="category-mens.html">Men's Collection</a>
+                            <a href="category-western.html">Western Collection</a>
+                        </div>
+                    </div>
+                    <a href="pearl-guide.html" class="nav-link">Pearl Guide</a>
+                    <a href="about.html" class="nav-link">Our Story</a>
+                    <a href="stores.html" class="nav-link">Stores</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="tel:+919876543210" class="btn btn-outline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call
+                    </a>
+                    <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections." target="_blank" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo-main">Ambica</span>
+            <button class="menu-close" id="menuClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-section">
+                <h4>Collections</h4>
+                <a href="category-malas.html">Pearl Malas</a>
+                <a href="category-earrings.html">Pearl Earrings</a>
+                <a href="category-bangles.html">Pearl Bangles</a>
+                <a href="category-sets.html">Pearl Sets</a>
+                <a href="category-mens.html">Men's Collection</a>
+                <a href="category-western.html">Western Collection</a>
+            </div>
+            <div class="mobile-section">
+                <a href="pearl-guide.html">Pearl Guide</a>
+                <a href="about.html">Our Story</a>
+                <a href="stores.html">Stores</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="mobile-actions">
+                <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20your%20pearl%20collections." target="_blank" class="btn btn-primary">WhatsApp Us</a>
+                <a href="tel:+919876543210" class="btn btn-outline">Call Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Hero (same as pearl-guide) -->
+    <section class="guide-hero">
+        <div class="guide-hero-content">
+            <h1>Visit Our Stores</h1>
+            <p>Experience our pearl collections in person at any of our three Hyderabad showrooms. Our experts are ready to help you find the perfect piece.</p>
+        </div>
+    </section>
+
+    <!-- Stores Grid -->
+    <section class="stores-section">
+        <div class="container">
+            <div class="stores-grid">
+                <!-- Store 1 -->
+                <div class="store-card">
+                    <div class="store-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=400&fit=crop" alt="Lower Tank Bund Store">
+                    </div>
+                    <div class="store-info">
+                        <span class="store-badge">Main Store</span>
+                        <h3>Lower Tank Bund</h3>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Shop No. 12-5-/1/1, Lower Tank Bund Road, Near DBR Mills, Hyderabad, Telangana 500080</span>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+914012345678">+91 40 1234 5678</a>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <div>
+                                <div>Mon - Sat: 10:30 AM - 8:30 PM</div>
+                                <div>Sunday: 11:00 AM - 2:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                            <span>Street parking available. Paid parking lot 100m away.</span>
+                        </div>
+                        <div class="store-actions">
+                            <a href="https://maps.google.com/?q=Lower+Tank+Bund+Hyderabad" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Store 2 -->
+                <div class="store-card">
+                    <div class="store-image">
+                        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&h=400&fit=crop" alt="Banjara Hills Store">
+                    </div>
+                    <div class="store-info">
+                        <h3>Banjara Hills</h3>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>8-2-/A/1, Road No. 10, Banjara Hills, Hyderabad, Telangana 500034</span>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+914087654321">+91 40 8765 4321</a>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <div>
+                                <div>Mon - Sat: 10:30 AM - 8:30 PM</div>
+                                <div>Sunday: 11:00 AM - 2:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                            <span>Basement parking available for customers.</span>
+                        </div>
+                        <div class="store-actions">
+                            <a href="https://maps.google.com/?q=Banjara+Hills+Road+No+10+Hyderabad" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Store 3 -->
+                <div class="store-card">
+                    <div class="store-image">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&h=400&fit=crop" alt="Gachibowli Store">
+                    </div>
+                    <div class="store-info">
+                        <h3>Gachibowli</h3>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Plot No. 25, Financial District, Near Wipro Circle, Gachibowli, Hyderabad, Telangana 500032</span>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+914098765432">+91 40 9876 5432</a>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <div>
+                                <div>Mon - Sat: 11:00 AM - 8:00 PM</div>
+                                <div>Sunday: 11:00 AM - 2:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="store-detail">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                            <span>Free parking available in front of store.</span>
+                        </div>
+                        <div class="store-actions">
+                            <a href="https://maps.google.com/?q=Gachibowli+Wipro+Circle+Hyderabad" target="_blank" class="btn btn-outline">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-grid">
+                <div class="appointment-content">
+                    <span class="section-label">Personal Service</span>
+                    <h2>Book an In-Store Try-On</h2>
+                    <p>Schedule a personalized appointment with our pearl experts. We'll help you explore our collections and find pieces that match your style and occasion.</p>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <p>Choose your preferred store and time</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <p>Share your preferences and occasion</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <p>Visit and try on with expert guidance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="care-actions">
+                        <a href="contact.html" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Book Appointment
+                        </a>
+                        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'd%20like%20to%20book%20a%20try-on%20appointment." target="_blank" class="btn btn-outline">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                <div class="appointment-image">
+                    <img src="https://images.unsplash.com/photo-1617038224557-69a00dbfde8e?w=800&h=600&fit=crop" alt="Store interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/LOGO.png" alt="Ambica Pearls & Jewellers" style="height:48px; width:auto;">
+                    </a>
+                    <p>Authentic Hyderabadi pearl jewellery since 2004. Handcrafted designs, assured exchange, three Hyderabad stores.</p>
+                    <div class="trust-badges">
+                        <div class="badge"><span></span> 100% Exchangeable</div>
+                        <div class="badge"><span></span> Authentic Pearls & Stones</div>
+                        <div class="badge"><span></span> Custom Designs</div>
+                        <div class="badge"><span></span> 3 Hyderabad Stores</div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <a href="category-malas.html">Pearl Malas</a>
+                    <a href="category-earrings.html">Pearl Earrings</a>
+                    <a href="category-bangles.html">Pearl Bangles</a>
+                    <a href="category-sets.html">Pearl Sets</a>
+                    <a href="category-mens.html">Men's Collection</a>
+                    <a href="category-western.html">Western Collection</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Information</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="pearl-guide.html">Pearl Guide</a>
+                    <a href="stores.html">Our Stores</a>
+                    <a href="contact.html">Contact</a>
+                    <h4 class="mt-4">Policies</h4>
+                    <a href="policy-authenticity.html">Authenticity & Exchange</a>
+                    <a href="policy-custom.html">Custom Orders</a>
+                    <a href="policy-privacy.html">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <strong>Lower Tank Bund</strong>
+                            <span>Hyderabad, Telangana 500080</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:hello@ambicapearls.com">hello@ambicapearls.com</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Ambica Pearls & Jewellers. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="policy-privacy.html">Privacy Policy</a>
+                    <a href="policy-authenticity.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="https://wa.me/919876543210?text=Hi%20Ambica%2C%20I'm%20interested%20in%20visiting%20your%20store." target="_blank" class="mobile-action">
+            <div class="mobile-icon primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <span>WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="mobile-action">
+            <div class="mobile-icon outline">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span>Call</span>
+        </a>
+        <a href="contact.html" class="mobile-action">
+            <div class="mobile-icon secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <span>Try-On</span>
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

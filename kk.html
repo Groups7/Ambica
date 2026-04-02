@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus Hiring - Hero Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 3;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            padding: 12px 24px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-hero-primary:hover {
+            background-color: #b2060f;
+        }
+
+        .btn-hero-secondary {
+            padding: 12px 24px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-hero-secondary:hover {
+            background-color: white;
+            color: #000;
+        }
+
+        .hero-sliders {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .vertical-slider {
+            position: absolute;
+            width: 250px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slider-1 {
+            left: 5%;
+        }
+
+        .slider-2 {
+            right: 5%;
+        }
+
+        .vertical-slider-track {
+            display: flex;
+            flex-direction: column;
+            animation: slideUp linear infinite;
+        }
+
+        .vertical-slider-item {
+            height: 200px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .vertical-slider-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        .hero-mobile-slider {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-sliders {
+                display: none;
+            }
+
+            .hero-mobile-slider {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            .mobile-slider {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .mobile-slider-track {
+                display: flex;
+                flex-direction: row;
+                animation: slideLeft linear infinite;
+            }
+
+            .mobile-slider-item {
+                min-width: 300px;
+                height: 100%;
+                flex-shrink: 0;
+                margin-right: 10px;
+            }
+
+            .mobile-slider-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @keyframes slideLeft {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Staffing &amp; Recruitment Agency in the USA</h1>
+                <p class="hero-subtitle">Supporting Businesses Across the USA with Skilled Talent and Reliable Hiring Solutions</p>
+                <div class="hero-buttons">
+                    <a class="btn-hero-primary" href="/book-call" data-discover="true">Book a Consultation<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                    <a class="btn-hero-secondary" href="/services" data-discover="true">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-sliders">
+                <div class="vertical-slider slider-1">
+                    <div class="vertical-slider-track" style="animation-duration: 70s;">
+                        <div class="vertical-slider-item"><img alt="Gallery 1" src="images/jobfair.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 2" src="images/jobfair1.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 3" src="images/jobfair2.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 4" src="images/jobfair3.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 5" src="images/jobfair4.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 6" src="images/jobfair5.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 7" src="images/laptopjob.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 8" src="images/Venus Consultancy at Job-fair event.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 9" src="images/Team Venus helping at Community Job fair.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 10" src="images/Venus Consultancy at Baltimore US for NMSDC Conference.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 11" src="images/Conference at Harvard Business School.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 12" src="images/jobfair.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 13" src="images/jobfair1.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 14" src="images/jobfair2.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 15" src="images/jobfair3.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 16" src="images/jobfair4.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 17" src="images/jobfair5.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 18" src="images/laptopjob.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 19" src="images/Venus Consultancy at Job-fair event.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 20" src="images/Team Venus helping at Community Job fair.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 21" src="images/Venus Consultancy at Baltimore US for NMSDC Conference.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 22" src="images/Conference at Harvard Business School.jpg"></div>
+                    </div>
+                </div>
+                <div class="vertical-slider slider-2">
+                    <div class="vertical-slider-track" style="animation-duration: 70s;">
+                        <div class="vertical-slider-item"><img alt="Gallery 1" src="images/Supplier Diversity event at Stellantis.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 2" src="images/Team Venus at US thanks giving dinner at AMCHAM Gala Event.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 3" src="images/With Consulate General of US.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 4" src="images/With The U.S Ambassador David Cohen.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 5" src="images/Meeting with Governor of Michigan Gretchen Whitmer.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 6" src="images/Great meeting with Governor of Arizona, Katie Hobbs.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 7" src="images/Great Meeting with Governor of Indiana, Eric Holcomb.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 8" src="images/Great Meeting with Governor of Maryland Wes Moore.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 9" src="images/Great Meeting with Governor of Nevada Lombardo.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 10" src="images/Venus Consultancy Sponsor at SELECT USA.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 11" src="images/Supplier Diversity event at Stellantis.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 12" src="images/Team Venus at US thanks giving dinner at AMCHAM Gala Event.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 13" src="images/With Consulate General of US.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 14" src="images/With The U.S Ambassador David Cohen.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 15" src="images/Meeting with Governor of Michigan Gretchen Whitmer.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 16" src="images/Great meeting with Governor of Arizona, Katie Hobbs.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 17" src="images/Great Meeting with Governor of Indiana, Eric Holcomb.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 18" src="images/Great Meeting with Governor of Maryland Wes Moore.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 19" src="images/Great Meeting with Governor of Nevada Lombardo.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 20" src="images/Venus Consultancy Sponsor at SELECT USA.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 1" src="images/Supplier Diversity event at Stellantis.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 2" src="images/Team Venus at US thanks giving dinner at AMCHAM Gala Event.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 3" src="images/With Consulate General of US.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 4" src="images/With The U.S Ambassador David Cohen.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 5" src="images/Meeting with Governor of Michigan Gretchen Whitmer.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 6" src="images/Great meeting with Governor of Arizona, Katie Hobbs.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 7" src="images/Great Meeting with Governor of Indiana, Eric Holcomb.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 8" src="images/Great Meeting with Governor of Maryland Wes Moore.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 9" src="images/Great Meeting with Governor of Nevada Lombardo.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 10" src="images/Venus Consultancy Sponsor at SELECT USA.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 11" src="images/Supplier Diversity event at Stellantis.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 12" src="images/Team Venus at US thanks giving dinner at AMCHAM Gala Event.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 13" src="images/With Consulate General of US.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 14" src="images/With The U.S Ambassador David Cohen.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 15" src="images/Meeting with Governor of Michigan Gretchen Whitmer.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 16" src="images/Great meeting with Governor of Arizona, Katie Hobbs.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 17" src="images/Great Meeting with Governor of Indiana, Eric Holcomb.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 18" src="images/Great Meeting with Governor of Maryland Wes Moore.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 19" src="images/Great Meeting with Governor of Nevada Lombardo.jpg"></div>
+                        <div class="vertical-slider-item"><img alt="Gallery 20" src="images/Venus Consultancy Sponsor at SELECT USA.jpg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-mobile-slider">
+                <div class="mobile-slider">
+                    <div class="mobile-slider-track" style="animation-duration: 60s;">
+                        <div class="mobile-slider-item"><img alt="Gallery 1" src="images/jobfair.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 2" src="images/jobfair1.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 3" src="images/jobfair2.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 4" src="images/jobfair3.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 5" src="images/jobfair4.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 6" src="images/jobfair5.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 7" src="images/laptopjob.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 8" src="images/Venus Consultancy at Job-fair event.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 9" src="images/Team Venus helping at Community Job fair.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 10" src="images/Venus Consultancy at Baltimore US for NMSDC Conference.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 11" src="images/Conference at Harvard Business School.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 12" src="images/Supplier Diversity event at Stellantis.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 13" src="images/Team Venus at US thanks giving dinner at AMCHAM Gala Event.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 14" src="images/With Consulate General of US.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 15" src="images/With The U.S Ambassador David Cohen.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 16" src="images/Meeting with Governor of Michigan Gretchen Whitmer.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 17" src="images/Great meeting with Governor of Arizona, Katie Hobbs.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 18" src="images/Great Meeting with Governor of Indiana, Eric Holcomb.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 19" src="images/Great Meeting with Governor of Maryland Wes Moore.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 20" src="images/Great Meeting with Governor of Nevada Lombardo.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 21" src="images/Venus Consultancy Sponsor at SELECT USA.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 1" src="images/jobfair.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 2" src="images/jobfair1.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 3" src="images/jobfair2.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 4" src="images/jobfair3.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 5" src="images/jobfair4.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 6" src="images/jobfair5.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 7" src="images/laptopjob.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 8" src="images/Venus Consultancy at Job-fair event.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 9" src="images/Team Venus helping at Community Job fair.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 10" src="images/Venus Consultancy at Baltimore US for NMSDC Conference.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 11" src="images/Conference at Harvard Business School.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 12" src="images/Supplier Diversity event at Stellantis.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 13" src="images/Team Venus at US thanks giving dinner at AMCHAM Gala Event.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 14" src="images/With Consulate General of US.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 15" src="images/With The U.S Ambassador David Cohen.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 16" src="images/Meeting with Governor of Michigan Gretchen Whitmer.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 17" src="images/Great meeting with Governor of Arizona, Katie Hobbs.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 18" src="images/Great Meeting with Governor of Indiana, Eric Holcomb.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 19" src="images/Great Meeting with Governor of Maryland Wes Moore.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 20" src="images/Great Meeting with Governor of Nevada Lombardo.jpg"></div>
+                        <div class="mobile-slider-item"><img alt="Gallery 21" src="images/Venus Consultancy Sponsor at SELECT USA.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
