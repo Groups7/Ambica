@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ambicapearlsandjewellers.com)",
+      "Bash(python3 update_categories.py)",
+      "Bash(python update_categories.py)",
+      "Bash(del update_categories.py)",
+      "Bash(gh pr:*)",
+      "Bash(python fix_headers_names.py)"
+    ]
+  }
+}
